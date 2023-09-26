@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First Sub Grid</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <div class="item">
+          <div class="subitem red">
+            <div class="inneritem"></div>
+            <div class="inneritem"></div>
+            <div class="inneritem"></div>
+            <div class="inneritem"></div>
+            <div class="inneritem"></div>
+            <div class="inneritem"></div>
+            <div class="inneritem"></div>
+            <div class="inneritem"></div>
+          </div>
+          <div class="subitem green"></div>
+        </div>
+        <div class="item">
+          <div class="subitem green"></div>
+          <div class="subitem red"></div>
+        </div>
+        <div class="item">
+          <div class="subitem red"></div>
+          <div class="subitem green"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  .main {
+    width: 100vw;
+    height: 100vw;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, minmax(100px, auto));
+    background-color: antiquewhite;
+  }
+  .item {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: repeat(2, 80px);
+    background-color: skyblue;
+  }
+  .subitem {
+    display: grid;
+    grid-column: auto;
+  }
+  .inneritem {
+    border: 1px solid white;
+  }
+  .green {
+    background-color: chartreuse;
+  }
+  .red {
+    background-color: tomato;
+  }
+</style>
